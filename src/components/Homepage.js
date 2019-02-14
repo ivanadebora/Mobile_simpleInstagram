@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, ScrollView } from 'react-native';
-import { Header } from 'react-native-elements';
+import { Header, Icon } from 'react-native-elements';
 import { connect } from 'react-redux';
 import _ from 'lodash';
 import { getAllPost } from '../actions';
@@ -11,7 +11,8 @@ import PostDetail from './PostDetail';
 class Homepage extends Component{
 
     static navigationOptions = {
-        drawerLabel: 'Homepage'
+        tabBarLabel: "Homepage",
+        tabBarIcon: ({ tintColor }) => <Icon name='home' color={tintColor} size={35} />
     };
 
     componentDidMount() {

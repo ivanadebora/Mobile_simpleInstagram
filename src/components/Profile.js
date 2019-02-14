@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
 import { connect } from 'react-redux';
-import { Header } from 'react-native-elements';
+import { Header, Icon } from 'react-native-elements';
 import { Card, CardSection, Button } from './common';
 import { logoutUser, postingCreate } from '../actions';
 import PostingForm from './PostingForm';
@@ -11,7 +11,7 @@ import PostingForm from './PostingForm';
 class Profile extends Component{
     static navigationOptions = {
         tabBarLabel: 'Profile',
-        
+        tabBarIcon: ({ tintColor }) => <Icon name='account-circle' color={tintColor} size={35} />,
     };
 
 
@@ -36,7 +36,14 @@ class Profile extends Component{
                     containerStyle={{
                         backgroundColor: '#000',
                     }}
-                    centerComponent={{text: 'Instagram', style: { color: '#fff', fontSize:20 }}}
+                    centerComponent={{
+                        text: `${this.props.user.email}`, 
+                        style: { color: '#fff', fontSize:15},
+                        navigationOptions: {
+                        tabBarLabel: "Log Out",
+                        tabBarIcon: ({ tintColor }) => <Icon name='account-circle' color={tintColor} size={35} />
+                        }
+                    }}
                     rightComponent={{
                         icon: 'home',
                         color: '#fff',
@@ -47,7 +54,7 @@ class Profile extends Component{
                     <PostingForm />
                     <CardSection>
                         <Button onPress={this.onButtonSavePress}>
-                            Save
+                            Post
                         </Button>
                     </CardSection>
                 </Card>

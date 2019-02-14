@@ -11,18 +11,18 @@ class PostingForm extends Component {
             <View>
                 <CardSection>
                     <Input 
-                        label="Image Link"
-                        placeholder="Put Your Image Link"
-                        value={this.props.link}
-                        onChangeText={text => this.props.postingUpdate('link', text)}
-                    />
-                </CardSection>
-                <CardSection>
-                    <Input 
                         label="Caption"
                         placeholder="Write a caption"
                         value={this.props.caption}
                         onChangeText={ text => this.props.postingUpdate('caption', text)}
+                    />
+                </CardSection>
+                <CardSection>
+                    <Input 
+                        label="Image"
+                        placeholder="Image URL"
+                        value={this.props.link}
+                        onChangeText={text => this.props.postingUpdate('link', text)}
                     />
                 </CardSection>
             </View>

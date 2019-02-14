@@ -10,7 +10,8 @@ class PostDetail extends Component {
             headerContentStyle, 
             headerTextStyle, 
             thumbnailContainerStyle,
-            imageStyle 
+            imageStyle,
+            postContentStyle 
         } = styles;
         return (
             <Card>
@@ -31,8 +32,9 @@ class PostDetail extends Component {
                         style={imageStyle}
                     />
                 </CardSection>
-                <CardSection>
-                    <Text>{caption}</Text>
+                <CardSection style={postContentStyle}>
+                    <Text style={{fontWeight: 300}}>{email}</Text>
+                    <Text style={{marginLeft: 20}}>{caption}</Text>
                 </CardSection>
             </Card>
         );
@@ -59,7 +61,11 @@ const styles = {
     imageStyle: {
         height: 370,
         width: '100%'
-    }
+    },
+    postContentStyle: {
+        flexDirection: 'row'
+    },
+
 };
 
 export default PostDetail;

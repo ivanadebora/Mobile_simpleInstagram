@@ -20,7 +20,7 @@ const styles = {
         backgroundColor: '#fff',
         borderRadius: 5,
         borderWidth: 1,
-        borderColor: '#007aff',
+        borderColor: '#000',
         marginLeft: 5,
         marginRigt: 5
     },
@@ -28,7 +28,7 @@ const styles = {
         width: '70%',
         textAlign: 'center',
         alignSelf: 'center',
-        color: '#007aff',
+        color: '#000',
         fontSize: 16,
         fontWeight: '600',
         paddingTop: 10,
